@@ -4,8 +4,11 @@ require_once ("config.php");
 require_once ("function.php");
 
 $title = "Task1";
-
 $allFiles = getFileList(UPDIR);
+
+if(isset($_POST['submit'])){
+    uploadFile($_FILES);
+}
 
 if(isset($_GET['delFile'])){
 	$file=$_GET['delFile'];

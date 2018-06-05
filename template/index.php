@@ -14,11 +14,11 @@
 </div>
 <?php } ?>
     <div class="container">
-        <form enctype="multipart/form-data" action="function.php" method="POST">
+        <form enctype="multipart/form-data" action="" method="POST">
             <div class="form-group">
                 <label for="uploadfile">FILE to UPLOAD</label>
-                <input type="file" name="uploaded_file" class="text-center center-block well well-sm" id="uploadfile" required></input>
-                <input type="submit" name="submit" class="text-center center-block well well-sm" value="Upload"></input>
+                <input type="file" name="uploaded_file" class="text-center center-block well well-sm" id="uploadfile" required>
+                <input type="submit" name="submit" class="text-center center-block well well-sm" value="Upload">
             </div>
         </form>
 
@@ -36,7 +36,7 @@
                 <tr>
                     <td><?php echo $file['N']; ?></td>
                     <td><?php echo $file['name']; ?></td>
-                    <td><?php echo $file['size']; ?> kb</td>
+                    <td><?php echo $file['size']; ?></td>
                     <td><?php echo '<a class="btn btn-danger" href="index.php?delFile=' . $file['name'] . '">Delete</a>' ?></td>
                 </tr>
             <?php } ?>

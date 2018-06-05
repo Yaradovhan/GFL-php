@@ -2,13 +2,16 @@
 
 require_once("config.php");
 
-if (isset($_POST['submit'])) {
-    $uploadfile = UPDIR . "/" . basename($_FILES['uploaded_file']['name']);
-    if (copy($_FILES['uploaded_file']['tmp_name'], $uploadfile)) {
-        header("Location: index.php?msg=uploadSuccess");
-    } else {
-        $upError = UPERROR;
-        header("Location: index.php?error=errorPermissionDenied");
+function uploadFile($file)
+{
+    if (isset($_POST['submit'])) {
+        $uploadfile = UPDIR . "/" . basename($file['uploaded_file']['name']);
+        if (copy($file['uploaded_file']['tmp_name'], $uploadfile)) {
+            chmod($uploadfile, 0777);
+            header("Location: index.php?msg=uploadSuccess");
+        } else {
+            header("Location: index.php?error=errorPermissionDenied");
+        }
     }
 }
 
@@ -24,7 +27,7 @@ function getFileList($dirpath)
 
             $result[$i]['N'] = $j;
             $result[$i]['name'] = $value;
-            $result[$i]['size'] = number_format(filesize($dirpath . DIRECTORY_SEPARATOR . $value) / 1024, 2);
+            $result[$i]['size'] = sizeFilter(filesize($dirpath . DIRECTORY_SEPARATOR . $value));
             $j++;
             $i++;
         }
@@ -35,10 +38,20 @@ function getFileList($dirpath)
 
 function deleteFile($name)
 {
-if (unlink(UPDIR . "/" . $name)) {
+    if (unlink(UPDIR . "/" . $name)) {
+
         header("Location: index.php?msg=deleteSuccess");
     } else {
-    header("Location: index.php?error=errorPermissionDenied");
+        header("Location: index.php?error=errorPermissionDenied");
+    }
 }
 
+function sizeFilter($bytes)
+{
+    $label = array('B', 'KB', 'MB');
+    for ($i = 0; $bytes >= 1024 && $i < (count($label) - 1); $bytes /= 1024, $i++);
+
+    return (round($bytes, 2) . " " . $label[$i]);
 }
+
+
