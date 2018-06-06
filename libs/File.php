@@ -41,6 +41,9 @@ class File
     public function replaceString($int, $newStr)
     {
         $string = $this->getStringFromFile($int);
+		if($string == STRNOTFOUND){
+			return $new = explode(" ", $string); 
+		}
         $new = str_replace($string, $newStr, $this->getArray());
         return $new;
     }
@@ -48,18 +51,23 @@ class File
     public function replaceSymbol($str, $symb, $val)
     {
         $string = $this->getStringFromFile($str);
+		if(($string == STRNOTFOUND)){
+			return $newArrSymb = explode(" ", $string);
+			}
         if ($symb < iconv_strlen($string)) {
             $string[$symb] = $val;
             $newArrSymb = $this->replaceString($str, $string);
             return $newArrSymb;
         }
-        return SYMBNOTFOUND;
+        return $newArrSymb = explode(" ", SYMBNOTFOUND);
 
     }
 
     public function saveFileWithChange($array, $fileName)
     {
         $fh = fopen($fileName, 'w');
+	//	if(){
+	//	}
         foreach ($array as $str) {
             fwrite($fh, "$str");
         }
