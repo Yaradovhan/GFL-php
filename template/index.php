@@ -14,10 +14,7 @@
 <body>
 <hr>
 Исходный файл: <br><br>
-<?php foreach($file->getArray() as $str){
-    echo $str;
-    echo "<br>";
-}?>
+<?php echo file_get_contents(FILE); ?>
 <hr>
 <table>
     <tr>

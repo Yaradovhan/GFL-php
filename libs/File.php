@@ -20,10 +20,28 @@ class File
         return file($this->file);
     }
 
+//    public function getSymbol()
+//    {
+//        return ;
+//    }
+
+    public function readFileByString($file)
+    {
+        $text = file_get_contents($file);
+        $text = nl2br($text);
+
+        return $text;
+    }
+
+    public function readFileBySymbol()
+    {
+
+    }
+
     public function getStringFromFile($int)
     {
         if ($int < count($this->getArray())) {
-            return $this->getArray()["$int"];
+            return $this->getArray()[$int];
         }
         return STRNOTFOUND;
 
@@ -41,36 +59,31 @@ class File
     public function replaceString($int, $newStr)
     {
         $string = $this->getStringFromFile($int);
-		if($string == STRNOTFOUND){
-			return $new = explode(" ", $string); 
-		}
         $new = str_replace($string, $newStr, $this->getArray());
+
         return $new;
     }
 
     public function replaceSymbol($str, $symb, $val)
     {
         $string = $this->getStringFromFile($str);
-		if(($string == STRNOTFOUND)){
-			return $newArrSymb = explode(" ", $string);
-			}
         if ($symb < iconv_strlen($string)) {
             $string[$symb] = $val;
             $newArrSymb = $this->replaceString($str, $string);
             return $newArrSymb;
         }
-        return $newArrSymb = explode(" ", SYMBNOTFOUND);
+        return SYMBNOTFOUND;
 
     }
 
     public function saveFileWithChange($array, $fileName)
     {
         $fh = fopen($fileName, 'w');
-	//	if(){
-	//	}
         foreach ($array as $str) {
             fwrite($fh, "$str");
         }
         fclose($fh);
+
+        return true;
     }
 }
