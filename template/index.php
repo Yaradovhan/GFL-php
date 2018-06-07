@@ -37,19 +37,26 @@
                     <td><?php echo $file['N']; ?></td>
                     <td><?php echo $file['name']; ?></td>
                     <td><?php echo $file['size']; ?></td>
-                    <td><?php echo '<a class="btn btn-danger" href="index.php?delFile=' . $file['name'] . '">Delete</a>' ?></td>
+                    <td>
+                        <form method="post">
+                            <input type="submit" name="delete" value="delete">
+                            <label>
+                                <input hidden name ='delete' value="<?php echo $file['name']?>">
+                            </label>
+                        </form>
+                    </td>
                 </tr>
             <?php } ?>
             </tbody>
         </table>
     </div>
-<?php if(isset($delError)){
-    ?><div class="alert alert-danger">
-    <strong><?php echo $delError; ?></strong>
-    </div>
-<?php } elseif(isset($error)) {
+<?php if(isset($error)){
     ?><div class="alert alert-danger">
     <strong><?php echo $error; ?></strong>
+    </div>
+<?php } elseif(isset($del)) {
+    ?><div class="alert alert-danger">
+    <strong><?php echo $del; ?></strong>
     </div>
 <?php } ?>
 </body>

@@ -2,18 +2,23 @@
 
 require_once("config.php");
 
+function dd($param)
+{
+    echo "<pre>";
+    var_dump($param);
+    echo "</pre>";
+}
+
 function uploadFile($file)
 {
-    if (isset($_POST['submit'])) {
-        $uploadfile = UPDIR . "/" . basename($file['uploaded_file']['name']);
-        if (copy($file['uploaded_file']['tmp_name'], $uploadfile)) {
-            chmod($uploadfile, 0777);
-            header("Location: index.php?msg=uploadSuccess");
-        } else {
-            header("Location: index.php?error=errorPermissionDenied");
-        }
+    $uploadfile = UPDIR . "/" . basename($file['uploaded_file']['name']);
+    if (copy($file['uploaded_file']['tmp_name'], $uploadfile)) {
+        chmod($uploadfile, 0777);
+        return UPSUCCESS;
     }
+    return UPERROR;
 }
+
 
 function getFileList($dirpath)
 {
@@ -39,19 +44,19 @@ function getFileList($dirpath)
 function deleteFile($name)
 {
     if (unlink(UPDIR . "/" . $name)) {
-
-        header("Location: index.php?msg=deleteSuccess");
-    } else {
-        header("Location: index.php?error=errorPermissionDenied");
+        return DELSUCCESS;
     }
+    return DELERROR;
 }
 
 function sizeFilter($bytes)
 {
-    $label = array('B', 'KB', 'MB');
-    for ($i = 0; $bytes >= 1024 && $i < (count($label) - 1); $bytes /= 1024, $i++);
-
-    return (round($bytes, 2) . " " . $label[$i]);
+    $mod = 1024;
+    $units = explode(' ', 'B KB MB GB TB PB');
+    for ($i = 0; $bytes > $mod; ++$i) {
+        $bytes /= $mod;
+    }
+    return round($bytes, 2) . ' ' . $units[$i];
 }
 
 
