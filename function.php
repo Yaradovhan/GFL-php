@@ -12,11 +12,15 @@ function dd($param)
 function uploadFile($file)
 {
     $uploadfile = UPDIR . "/" . basename($file['uploaded_file']['name']);
-    if (copy($file['uploaded_file']['tmp_name'], $uploadfile)) {
-        chmod($uploadfile, 0777);
-        return UPSUCCESS;
+    if (file_exists($uploadfile)) {
+        return FILEEXIST;
+    } else {
+        if (copy($file['uploaded_file']['tmp_name'], $uploadfile)) {
+            chmod($uploadfile, 0777);
+            return UPSUCCESS;
+        }
+        return UPERROR;
     }
-    return UPERROR;
 }
 
 function getFileList($dirpath)
