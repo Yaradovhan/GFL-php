@@ -16,7 +16,6 @@
     <div class="container">
         <form enctype="multipart/form-data" action="" method="POST">
             <div class="form-group">
-                <label for="uploadfile">FILE to UPLOAD</label>
                 <input type="file" name="uploaded_file" class="text-center center-block well well-sm" id="uploadfile" required>
                 <input type="submit" name="submit" class="text-center center-block well well-sm" value="Upload">
             </div>
@@ -31,6 +30,11 @@
                 <th>Command</th>
             </tr>
             </thead>
+            <?php if(isset($errParam)){
+            ?><div class="alert alert-danger">
+                <strong><?php echo $errParam; ?></strong>
+            </div>
+            <?php } ?>
             <tbody>
             <?php foreach ($allFiles as $file) { ?>
                 <tr>
