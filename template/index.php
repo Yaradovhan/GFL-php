@@ -13,8 +13,11 @@
 </head>
 <body>
 <hr>
-Исходный файл: <br><br>
-<?php echo file_get_contents(FILE); ?>
+Исходный файл(построчный): <br><br>
+<?php echo $curFile; ?>
+<hr>
+Исходный файл(посимвольный): <br><br>
+<?php echo $readBySymb; ?>
 <hr>
 <table>
     <tr>
@@ -49,10 +52,7 @@
     </tr>
 </table>
 Файл с новой строкой: <br><br>
-<?php foreach($newStr as $new){
-    echo $new;
-    echo "<br>";
-}?>
+<?php echo $newStrFile;?>
 <hr>
 <table>
     <tr>
@@ -69,9 +69,6 @@
     </tr>
 </table>
 Файл с новым символом в заданой строке: <br><br>
-<?php foreach($newSym as $sym){
-    echo $sym;
-    echo "<br>";
-}?>
+<?php echo $newSymFile;?>
 </body>
 </html>
