@@ -22,4 +22,4 @@ $con->conn();
 dd($con);
 require_once 'template/index.php';
 
-?>
+?>  
