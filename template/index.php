@@ -12,7 +12,7 @@
         ?>
         <li>
             <strong><?php echo $result['action']; ?></strong>
-            <pre><?php echo $result['result']; ?></pre>
+            <p><?php echo $result['result']; ?></p>
         </li>
     <?php
     endforeach;
@@ -26,21 +26,21 @@
         ?>
         <li>
             <strong><?php echo $result['action']; ?></strong>
-            <pre><?php echo $result['result']; ?></pre>
+            <p><?php echo $result['result']; ?></p>
         </li>
     <?php
     endforeach;
     ?>
 </ul>
 <hr>
-<h1>Data Base - testdb</h1>
+<h1>Data Base - testDB1(user6)</h1>
 <ul>
     <?php
     foreach ($arrayMysql as $result):
         ?>
         <li>
             <strong><?php echo $result['action']; ?></strong>
-            <pre><?php echo $result['result']; ?></pre>
+            <p><?php echo $result['result']; ?></p>
         </li>
     <?php
     endforeach;

@@ -68,14 +68,11 @@ $arrayCookie[] = [
 
 $array = [
     'id' => '3',
-    'name' => 'Kolya',
-    'password' => '999',
-    'first_name' => 'Nikolay',
-    'last_name' => 'Ivanovich'
+    'title' => 'Kolya',
 ];
 
 $arrayMysql[] = [
-    "action" => "Save data with KEY - ". $array['id'] ." and VALUE - " . $array['name'] . "," . $array['password'] .",". $array['first_name'] .",". $array['last_name'] ,
+    "action" => "Save data with KEY - ". $array['id'] ." and VALUE - " . $array['title'],
     "result" => $dbcon->saveData($array['id'], $array),
 ];
 
