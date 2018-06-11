@@ -1,25 +1,99 @@
 <?php
+
 require_once 'config.php';
 require_once 'libs/Session.php';
 require_once 'libs/Cookie.php';
 require_once 'libs/Mysql.php';
 
-//$ses = new Session();
-//$ses->saveData('iduser',$_COOKIE['PHPSESSID']);
-//$get = $ses->getData('iduser');
-//$del = $ses->deleteData('if');
-//var_dump($ses);
-//var_dump($del)
-//dd($_SESSION);
+$title = "Task5";
 
-//$coo = new Cookie();
-//$coo->saveData("gsdagsg","sdjkoghskj");
-//$coo->deleteData('gsdagsg');
-//dd($_COOKIE);
+$session = new Session();
+$cookie = new Cookie();
+$dbcon = new Mysql();
 
-$con = new Mysql();
-$con->conn();
-dd($con);
+$arrayData = [
+    'key' => 'name',
+    'val' => 'yaroslav',
+];
+
+$arraySession = [];
+$arrayCookie = [];
+$arrayMysql = [];
+
+//////////////////////////////////////////////SESSION//////////////////////////////////////////////
+
+$arraySession[] = [
+    "action" => "Save data with KEY - ". $arrayData['key'] ." and VALUE - " . $arrayData['val'],
+    "result" => $session->saveData($arrayData['key'], $arrayData['val']),
+];
+
+$arraySession[] = [
+    "action" => "Get data with KEY - ". $arrayData['key'],
+    "result" => $session->getData($arrayData['key']),
+];
+
+$arraySession[] = [
+    "action" => "Delete data with KEY - ". $arrayData['key'],
+    "result" => $session->deleteData($arrayData['key']),
+];
+
+$arraySession[] = [
+    "action" => "Get data with KEY - " . $arrayData['key'] . " after DELETE",
+    "result" => $session->getData($arrayData['key']),
+];
+
+//////////////////////////////////////////////COOKIE//////////////////////////////////////////////
+
+$arrayCookie[] = [
+    "action" => "Save data with KEY - ". $arrayData['key'] ." and VALUE - " . $arrayData['val'],
+    "result" => $cookie->saveData($arrayData['key'], $arrayData['val']),
+];
+
+$arrayCookie[] = [
+    "action" => "Get data with KEY - ". $arrayData['key'],
+    "result" => $cookie->getData($arrayData['key']),
+];
+
+$arrayCookie[] = [
+    "action" => "Delete data with KEY - ". $arrayData['key'],
+    "result" => $cookie->deleteData($arrayData['key']),
+];
+
+$arrayCookie[] = [
+    "action" => "Get data with KEY - " . $arrayData['key'] . " after DELETE",
+    "result" => $cookie->getData($arrayData['key']),
+];
+
+//////////////////////////////////////////////MYSQL//////////////////////////////////////////////
+
+$array = [
+    'id' => '3',
+    'name' => 'Kolya',
+    'password' => '999',
+    'first_name' => 'Nikolay',
+    'last_name' => 'Ivanovich'
+];
+
+$arrayMysql[] = [
+    "action" => "Save data with KEY - ". $array['id'] ." and VALUE - " . $array['name'] . "," . $array['password'] .",". $array['first_name'] .",". $array['last_name'] ,
+    "result" => $dbcon->saveData($array['id'], $array),
+];
+
+$arrayMysql[] = [
+    "action" => "Get data with KEY - ". $array['id'],
+    "result" => $dbcon->getData($array['id']),
+];
+
+$arrayMysql[] = [
+    "action" => "Delete data with KEY - ". $array['id'],
+    "result" => $dbcon->deleteData($array['id']),
+];
+
+$arrayMysql[] = [
+    "action" => "Get data with KEY - " . $array['id'] . " after DELETE",
+    "result" => $dbcon->getData($array['id']),
+];
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 require_once 'template/index.php';
-
-?>  

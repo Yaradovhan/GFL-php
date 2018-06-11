@@ -6,5 +6,3 @@ interface iWorkData
     public function getData($key);
     public function deleteData($key);
 }
-
-?>

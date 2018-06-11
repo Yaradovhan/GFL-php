@@ -4,24 +4,24 @@ class Cookie implements iWorkData
 {
     public function saveData($key, $val)
 	{	
-		if(setcookie($key,$val)){
-			return true;
+		if(setcookie($key,$val, time() + 3600)){
+			return "Success. Cookie was written";
 		} else {
-			return false;
+			return "Error in writing cookie";
 		}
 	}
-   
 
 	public function getData($key)
 	{
-		return (!empty($_COOKIE[$key])) ? $_COOKIE[$key] : false;
+        if(!empty($_COOKIE[$key])){
+            return $_COOKIE[$key];
+        }
+        return "Cookie key not found";
 	}
     
 
 	public function deleteData($key)
 	{
-		setcookie($key, "", time() - 3600);
+        return (setcookie($key, "", time() - 3600)) ? "Success. Cookie key was deleted" : "Error in deleting cookie key" ;
 	}
 }
-
-?>
