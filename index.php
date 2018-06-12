@@ -28,6 +28,8 @@ $selectMulti = HtmlHelper :: selectMulti('number',$array, 'class="form-control"'
 $table = HtmlHelper :: table($arrayTable, 'class="table table-bordered"');
  
 $ulol = HtmlHelper :: ulol($arrayNames);
+
+$dldd = HtmlHelper :: dldd($arrayNames);
   
 $radioButGroup = HtmlHelper :: radioButGroup('names',$arrayNames);
 

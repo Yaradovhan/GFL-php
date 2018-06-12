@@ -31,7 +31,20 @@ class HtmlHelper
 			$table .= '</tbody>';
 		$table .= '</table>';
 		return $table;
-	}	
+	}
+	
+	public static function dldd($array, $class=null)
+	{
+		$result = '<dl>';
+		foreach ($array as $k=>$val)
+		{
+			$result .= '<dt>'.$k.'</dt>';
+			$result .= '<dd>'.$val.'</dd>';
+			
+		}
+		$result .= '</dl>';
+		return $result;
+	}
 
 	public static function ulol($array, $class=null)
 	{

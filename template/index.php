@@ -27,6 +27,10 @@
 				<div class="form-group">
     					<?php echo $ulol;?>
   					</div>
+				<h2 class="mt-3 mb-5">DL DD</h2>
+				<div class="form-group">
+    					<?php echo $dldd;?>
+  					</div>
 				<h2 class="mt-3 mb-5">RADIO BUTTONS</h2>
 				<div class="form-group">
     					<?php echo $radioButGroup;?>
