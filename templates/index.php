@@ -1,27 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <link href="templates/css/bootstrap.min.css" rel="stylesheet">
-    <link href="templates/style.css" rel="stylesheet">
-    <title>%TITLE%</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<body style="background: #71b3ca">
-<div class="container " style="width: 90%; margin: auto;">
-    <div class="row" style="background: #d5ecf4; border-radius:6px">
-        <div class="col-md-2 " style="">
-            <form action="" method="post">
-                <label>Search on Google</label>
-                <input name="request" type="text">
-                <input type="submit">
-            </form>
+    <title></title>
+  </head>
+<body>
+<div class="container">
+<img class="img-fluid mb-5 d-block mx-auto" src="src/profile.png" alt="">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+			<form action="" method="post">
+				<div class="form-row">
+					<div class="col-12 col-md-9 mb-2 mb-md-0">
+						<input name="request" type="text" class="form-control form-control-lg">
+					</div>
+					<div class="col-12 col-md-3">
+						<button type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
+					</div>
+				</div>
+			</form>
         </div>
     </div>
     %OUT%
 </div>
-</div>
 </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
-

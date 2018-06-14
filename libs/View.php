@@ -31,11 +31,11 @@ class View
 	{	
     $arr['%OUT%'] = '';
     foreach ($data as $row) {
-        $arr['%OUT%'] .= '<div class="row" style="background: #d5ecf4; border-radius:6px" >'
-            . '<div class="col-md-1" style="background: #d5ecf4; border-radius:6px; " ><p>'
-            . '<a href = ' . $row['link'] . '>' . $row['linkText'] . '</a></p>'
-            . '<p>' . $row['link'] . '</p>'
-            . '<p>' . $row['details'] . '</p></div></div>';
+        $arr['%OUT%'] .= 	'<br><div class="row align-items-center">'
+							. '<div class="col"><p>'
+							. '<a href = ' . $row['link'] . '>' . $row['linkText'] . '</a></p>'
+							. '<p>' . $row['link'] . '</p>'
+							. '<p>' . $row['details'] . '</p></div></div><hr>';
     }
     return $arr['%OUT%'];
 	}
