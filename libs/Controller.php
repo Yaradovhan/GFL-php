@@ -26,9 +26,11 @@ class Controller
 		{
 			if($this->model->checkForm() === true)
 			{
-                $mArray = $this->model->sendQuery($_POST['request']);
+                $out = $this->model->sendQuery($_POST['request']);
+				$mArray = $this->model->getArray($out);
 			}
-    	        $this->view->addToReplace($mArray);
+			
+    	    $this->view->addToReplace($mArray);
 		}	
 			    
 		private function pageDefault()

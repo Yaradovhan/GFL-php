@@ -10,9 +10,9 @@ class Model
 
    }
    	
-	public function getArray()
+	public function getArray($out=null)
    {	    
-		return array('%TITLE%'=>'Search', '%OUT%'=> '');
+		return array('%TITLE%'=>'TASK 8', '%OUT%'=> $out['%OUT%']);
    }
 	
 	public function checkForm()

@@ -2,7 +2,7 @@
 
 class MyCurl
 {
-	public $url = 'https://www.google.com.ua/search?q=';
+	private $url = 'https://www.google.com.ua/search?q=';
 	public function __construct($request)
 	{
 		$request = urlencode($request);
