@@ -1,6 +1,7 @@
 <?php
 
 interface iMusician
+
 {
     public function addInstrument(iInstrument $obj);
     public function getInstrument();

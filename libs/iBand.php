@@ -1,6 +1,7 @@
 <?php
 
 interface iBand
+
 {
     public function getName();
     public function getGenre();
