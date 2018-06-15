@@ -26,7 +26,7 @@ class Model
         $this->placeHolderProp['%ERR_EMAIL%'] = '';
         $this->placeHolderProp['%MSG%'] = '';
         $this->placeHolderProp['%ERR_MSG%'] = '';
-        $this->placeHolderProp['%SUCCES%'] = '';
+        $this->placeHolderProp['%SUCCESS%'] = '';
         $this->placeHolderProp['%ERR_SEND%'] = '';
     }
 
@@ -125,17 +125,16 @@ class Model
     public function sendEmail()
     {
         date_default_timezone_set('Europe/Kiev');
-        $msg = 'From: ' . $this->fullNameProp . "\r\n";
-        $msg .= 'Subject: ' . $this->subjectProp . "\r\n";
-        $msg .= 'Message: ' . $this->msgProp . "\r\n";
-        $msg .= 'Email: ' . $this->emailProp . "\r\n";
-        $msg .= "\r\n" . 'IP-adress: ' . $_SERVER['REMOTE_ADDR'] . "\r\n";
-        $msg .= 'Date and time: ' . date("Y-m-d H:i:s");
+        $msg = "From: " . $this->fullNameProp . "\r\n";
+        $msg .= "Subject: " . $this->subjectProp . "\r\n";
+        $msg .= "Message: " . $this->msgProp . "\r\n";
+        $msg .= "Email: " . $this->emailProp . "\r\n";
+        $msg .= "IP-adress: " . $_SERVER['REMOTE_ADDR'] . "\r\n";
+        $msg .= "Date and time: " . date("Y-m-d H:i:s");
 
         $header = 'From: ' . $this->emailProp . "\r\n" . 'Content-type: text/html; charset=utf-8' . "\r\n"
             . 'Reply-To: ' . $this->emailProp . "\r\n";
 
-        dd($msg);
         $send = mail(EMAIL_TO, $this->subjectProp, $msg, $header);
         if ($send) {
             $this->placeHolderProp['%FULLNAME%'] = '';
@@ -143,7 +142,6 @@ class Model
             $this->placeHolderProp['%SELECT_0%'] = 'selected="selected"';
             $this->placeHolderProp['%EMAIL%'] = '';
             $this->placeHolderProp['%MSG%'] = '';
-//            $this->placeHolderProp['%SUCCESS%'] = 'Mail successfully sent!';
             $this->placeHolderProp['%SUCCESS%'] = "<div class=\"alert alert-success\" role=\"alert\">
   Mail successfully sent!
 </div>";
