@@ -1,0 +1,1393 @@
+
+/var/www/test.loc/task12/ExceptionTest2.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+FF                                                                  2 / 2 (100%)
+
+Time: 128 ms, Memory: 8.00MB
+
+There were 2 failures:
+
+1) ExceptionTest2::testExceptionHasRightMessage
+Failed asserting that exception message 'Some Message' contains 'Right Message'.
+
+2) ExceptionTest2::testExceptionHasRightCode
+Failed asserting that 10 is equal to expected exception code 20.
+
+FAILURES!
+Tests: 2, Assertions: 4, Failures: 2.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ClassHasAttributeTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 119 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ClassHasAttributeTest::testFailure
+Failed asserting that class "stdClass" has attribute "foo".
+
+/var/www/test.loc/task12/ClassHasAttributeTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ErrorSuppressionTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 113 ms, Memory: 8.00MB
+
+OK (1 test, 1 assertion)
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/FalseTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 110 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) FalseTest::testFailure
+Failed asserting that true is false.
+
+/var/www/test.loc/task12/FalseTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StringEqualsFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 111 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) StringEqualsFileTest::testFailure
+Failed asserting that file "/home/sb/expected" exists.
+
+/var/www/test.loc/task12/StringEqualsFileTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/Bar.php
+
+Fatal error: Uncaught PHPUnit\Runner\Exception: Class '/var/www/test.loc/task12/Bar' could not be found in '/var/www/test.loc/task12/Bar.php'. in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php:99
+Stack trace:
+#0 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(130): PHPUnit\Runner\StandardTestSuiteLoader->load('/var/www/test.l...', '/var/www/test.l...')
+#1 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(78): PHPUnit\Runner\BaseTestRunner->loadSuiteClass('/var/www/test.l...', '/var/www/test.l...')
+#2 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(176): PHPUnit\Runner\BaseTestRunner->getTest('/var/www/test.l...', '/var/www/test.l...', Array)
+#3 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(155): PHPUnit\TextUI\Command->run(Array, true)
+#4 /usr/local/bin/phpunit(589): PHPUnit\TextUI\Command::main()
+#5 {main}
+  thrown in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php on line 99
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ArrayHasKeyTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ArrayHasKeyTest::testFailure
+Failed asserting that an array has the key 'foo'.
+
+/var/www/test.loc/task12/ArrayHasKeyTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ExceptionTest3.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+EEE                                                                 3 / 3 (100%)
+
+Time: 118 ms, Memory: 8.00MB
+
+There were 3 errors:
+
+1) ExceptionTest3::testException
+Error: Call to undefined method ExceptionTest3::setExpectedException()
+
+/var/www/test.loc/task12/ExceptionTest3.php:9
+
+2) ExceptionTest3::testExceptionHasRightMessage
+Error: Call to undefined method ExceptionTest3::setExpectedException()
+
+/var/www/test.loc/task12/ExceptionTest3.php:14
+
+3) ExceptionTest3::testExceptionHasRightCode
+Error: Call to undefined method ExceptionTest3::setExpectedException()
+
+/var/www/test.loc/task12/ExceptionTest3.php:22
+
+ERRORS!
+Tests: 3, Assertions: 0, Errors: 3.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/MultipleDependenciesTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 106 ms, Memory: 8.00MB
+
+OK (3 tests, 3 assertions)
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StringEndsWithTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 105 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) StringEndsWithTest::testFailure
+Failed asserting that 'foo' ends with "suffix".
+
+/var/www/test.loc/task12/StringEndsWithTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/LessThanTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) LessThanTest::testFailure
+Failed asserting that 2 is less than 1.
+
+/var/www/test.loc/task12/LessThanTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/XmlFileEqualsXmlFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 120 ms, Memory: 8.00MB
+
+There was 1 error:
+
+1) XmlFileEqualsXmlFileTest::testFailure
+PHPUnit\Framework\Exception: Could not read "/home/sb/expected.xml".
+
+/var/www/test.loc/task12/XmlFileEqualsXmlFileTest.php:10
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/LongArrayDiffTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 111 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) LongArrayDiffTest::testEquality
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+     11 => 0
+     12 => 1
+     13 => 2
+-    14 => 3
++    14 => 33
+     15 => 4
+     16 => 5
+     17 => 6
+ )
+
+/var/www/test.loc/task12/LongArrayDiffTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/Foo.php
+
+Fatal error: Uncaught PHPUnit\Runner\Exception: Class '/var/www/test.loc/task12/Foo' could not be found in '/var/www/test.loc/task12/Foo.php'. in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php:99
+Stack trace:
+#0 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(130): PHPUnit\Runner\StandardTestSuiteLoader->load('/var/www/test.l...', '/var/www/test.l...')
+#1 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(78): PHPUnit\Runner\BaseTestRunner->loadSuiteClass('/var/www/test.l...', '/var/www/test.l...')
+#2 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(176): PHPUnit\Runner\BaseTestRunner->getTest('/var/www/test.l...', '/var/www/test.l...', Array)
+#3 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(155): PHPUnit\TextUI\Command->run(Array, true)
+#4 /usr/local/bin/phpunit(589): PHPUnit\TextUI\Command::main()
+#5 {main}
+  thrown in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php on line 99
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/Biscuit.php
+
+Fatal error: Uncaught PHPUnit\Runner\Exception: Class '/var/www/test.loc/task12/Biscuit' could not be found in '/var/www/test.loc/task12/Biscuit.php'. in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php:99
+Stack trace:
+#0 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(130): PHPUnit\Runner\StandardTestSuiteLoader->load('/var/www/test.l...', '/var/www/test.l...')
+#1 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(78): PHPUnit\Runner\BaseTestRunner->loadSuiteClass('/var/www/test.l...', '/var/www/test.l...')
+#2 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(176): PHPUnit\Runner\BaseTestRunner->getTest('/var/www/test.l...', '/var/www/test.l...', Array)
+#3 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(155): PHPUnit\TextUI\Command->run(Array, true)
+#4 /usr/local/bin/phpunit(589): PHPUnit\TextUI\Command::main()
+#5 {main}
+  thrown in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php on line 99
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ExpectedErrorTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 error:
+
+1) ExpectedErrorTest::testFailingInclude
+ReflectionException: Class PHPUnit_Framework_Error does not exist
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ExceptionTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 104 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ExceptionTest::testException
+Failed asserting that exception of type "InvalidArgumentException" is thrown.
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualsTest4.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) EqualsTest4::testFailure
+Failed asserting that two objects are equal.
+--- Expected
++++ Actual
+@@ @@
+ stdClass Object (
+-    'foo' => 'foo'
+-    'bar' => 'bar'
++    'foo' => 'bar'
++    'baz' => 'bar'
+ )
+
+/var/www/test.loc/task12/EqualsTest4.php:17
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/JsonFileEqualsJsonFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 105 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) JsonFileEqualsJsonFileTest::testFailure
+Failed asserting that file "path/to/fixture/file" exists.
+
+/var/www/test.loc/task12/JsonFileEqualsJsonFileTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ExceptionTest4.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 118 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ExceptionTest4::testException
+An expected exception has not been raised.
+
+/var/www/test.loc/task12/ExceptionTest4.php:16
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/BiscuitTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 107 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) BiscuitTest::testEquals
+Failed asserting that Biscuit Object &00000000572f3fcb00000000372e62f7 () is not equal to Biscuit Object &00000000572f3fcc00000000372e62f7 ().
+
+/var/www/test.loc/task12/BiscuitTest.php:16
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EmptyTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 115 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) EmptyTest::testFailure
+Failed asserting that an array is empty.
+
+/var/www/test.loc/task12/EmptyTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/LessThanOrEqualTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) LessThanOrEqualTest::testFailure
+Failed asserting that 2 is equal to 1 or is less than 1.
+
+/var/www/test.loc/task12/LessThanOrEqualTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 2, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ContainsTest2.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 104 ms, Memory: 8.00MB
+
+There was 1 error:
+
+1) ContainsTest2::testFailure
+Error: Call to undefined function mb_strpos()
+
+/var/www/test.loc/task12/ContainsTest2.php:9
+
+ERRORS!
+Tests: 1, Assertions: 1, Errors: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/SelectRegExpTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+EEEE                                                                4 / 4 (100%)
+
+Time: 112 ms, Memory: 8.00MB
+
+There were 4 errors:
+
+1) SelectRegExpTest::testAbsenceFailure
+Error: Call to undefined method SelectRegExpTest::assertSelectRegExp()
+
+/var/www/test.loc/task12/SelectRegExpTest.php:15
+
+2) SelectRegExpTest::testPresenceFailure
+Error: Call to undefined method SelectRegExpTest::assertSelectRegExp()
+
+/var/www/test.loc/task12/SelectRegExpTest.php:20
+
+3) SelectRegExpTest::testExactCountFailure
+Error: Call to undefined method SelectRegExpTest::assertSelectRegExp()
+
+/var/www/test.loc/task12/SelectRegExpTest.php:25
+
+4) SelectRegExpTest::testRangeFailure
+Error: Call to undefined method SelectRegExpTest::assertSelectRegExp()
+
+/var/www/test.loc/task12/SelectRegExpTest.php:30
+
+ERRORS!
+Tests: 4, Assertions: 0, Errors: 4.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/FileExistsTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) FileExistsTest::testFailure
+Failed asserting that file "/path/to/file" exists.
+
+/var/www/test.loc/task12/FileExistsTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/CountTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 106 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) CountTest::testFailure
+Failed asserting that actual size 1 matches expected size 0.
+
+/var/www/test.loc/task12/CountTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StackTest2.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+OK (3 tests, 5 assertions)
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/JsonStringEqualsJsonFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 117 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) JsonStringEqualsJsonFileTest::testFailure
+Failed asserting that file "path/to/fixture/file" exists.
+
+/var/www/test.loc/task12/JsonStringEqualsJsonFileTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StringStartsWithTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) StringStartsWithTest::testFailure
+Failed asserting that 'foo' starts with "prefix".
+
+/var/www/test.loc/task12/StringStartsWithTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ContainsOnlyInstancesOfTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 112 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ContainsOnlyInstancesOfTest::testFailure
+Failed asserting that Array &0 (
+    0 => Foo Object &000000007ccee97f0000000052fcc430 ()
+    1 => Bar Object &000000007ccee9780000000052fcc430 ()
+    2 => Foo Object &000000007ccee97e0000000052fcc430 ()
+) contains only values of type "Foo".
+
+/var/www/test.loc/task12/ContainsOnlyInstancesOfTest.php:11
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/RegExpTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 113 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) RegExpTest::testFailure
+Failed asserting that 'bar' matches PCRE pattern "/foo/".
+
+/var/www/test.loc/task12/RegExpTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/XmlStringEqualsXmlStringTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 111 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) XmlStringEqualsXmlStringTest::testFailure
+Failed asserting that two DOM documents are equal.
+--- Expected
++++ Actual
+@@ @@
+ <?xml version="1.0"?>
+ <foo>
+-  <bar/>
++  <baz/>
+ </foo>
+
+/var/www/test.loc/task12/XmlStringEqualsXmlStringTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ObjectHasAttributeTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 111 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ObjectHasAttributeTest::testFailure
+Failed asserting that object of class "stdClass" has attribute "foo".
+
+/var/www/test.loc/task12/ObjectHasAttributeTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/JsonStringEqualsJsonStringTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 114 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) JsonStringEqualsJsonStringTest::testFailure
+Failed asserting that '{"Mascott":"ux"}' matches JSON string "{"Mascot":"Tux"}".
+--- Expected
++++ Actual
+@@ @@
+ {
+-    "Mascot": "Tux"
++    "Mascott": "ux"
+ }
+
+/var/www/test.loc/task12/JsonStringEqualsJsonStringTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 3, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/DataTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+...F                                                                4 / 4 (100%)
+
+Time: 115 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) DataTest::testAdd with data set #3 (1, 1, 3)
+Failed asserting that 2 matches expected 3.
+
+/var/www/test.loc/task12/DataTest.php:12
+
+FAILURES!
+Tests: 4, Assertions: 4, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/NullTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 109 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) NullTest::testFailure
+Failed asserting that 'foo' is null.
+
+/var/www/test.loc/task12/NullTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/SelectCountTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+EEEE                                                                4 / 4 (100%)
+
+Time: 104 ms, Memory: 8.00MB
+
+There were 4 errors:
+
+1) SelectCountTest::testAbsenceFailure
+Error: Call to undefined method SelectCountTest::assertSelectCount()
+
+/var/www/test.loc/task12/SelectCountTest.php:15
+
+2) SelectCountTest::testPresenceFailure
+Error: Call to undefined method SelectCountTest::assertSelectCount()
+
+/var/www/test.loc/task12/SelectCountTest.php:20
+
+3) SelectCountTest::testExactCountFailure
+Error: Call to undefined method SelectCountTest::assertSelectCount()
+
+/var/www/test.loc/task12/SelectCountTest.php:25
+
+4) SelectCountTest::testRangeFailure
+Error: Call to undefined method SelectCountTest::assertSelectCount()
+
+/var/www/test.loc/task12/SelectCountTest.php:30
+
+ERRORS!
+Tests: 4, Assertions: 0, Errors: 4.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/GreatThanOrEqualTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 104 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) GreatThanOrEqualTest::testFailure
+Failed asserting that 1 is equal to 2 or is greater than 2.
+
+/var/www/test.loc/task12/GreatThanOrEqualTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 2, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/SameTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) SameTest::testFailure
+Failed asserting that 2204 is identical to '2204'.
+
+/var/www/test.loc/task12/SameTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/SameTest2.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) SameTest2::testFailure
+Failed asserting that two variables reference the same object.
+
+/var/www/test.loc/task12/SameTest2.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/SelectEqualsTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+EEEE                                                                4 / 4 (100%)
+
+Time: 110 ms, Memory: 8.00MB
+
+There were 4 errors:
+
+1) SelectEqualsTest::testAbsenceFailure
+Error: Call to undefined method SelectEqualsTest::assertSelectEquals()
+
+/var/www/test.loc/task12/SelectEqualsTest.php:15
+
+2) SelectEqualsTest::testPresenceFailure
+Error: Call to undefined method SelectEqualsTest::assertSelectEquals()
+
+/var/www/test.loc/task12/SelectEqualsTest.php:20
+
+3) SelectEqualsTest::testExactCountFailure
+Error: Call to undefined method SelectEqualsTest::assertSelectEquals()
+
+/var/www/test.loc/task12/SelectEqualsTest.php:25
+
+4) SelectEqualsTest::testRangeFailure
+Error: Call to undefined method SelectEqualsTest::assertSelectEquals()
+
+/var/www/test.loc/task12/SelectEqualsTest.php:30
+
+ERRORS!
+Tests: 4, Assertions: 0, Errors: 4.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/OutputTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 106 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) OutputTest::testExpectBarActualBaz
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'bar'
++'baz'
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ClassHasStaticAttributeTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 104 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ClassHasStaticAttributeTest::testFailure
+Failed asserting that class "stdClass" has static attribute "foo".
+
+/var/www/test.loc/task12/ClassHasStaticAttributeTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/XmlStringEqualsXmlFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 105 ms, Memory: 8.00MB
+
+There was 1 error:
+
+1) XmlStringEqualsXmlFileTest::testFailure
+PHPUnit\Framework\Exception: Could not read "/home/sb/expected.xml".
+
+/var/www/test.loc/task12/XmlStringEqualsXmlFileTest.php:10
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ArrayDiffTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 102 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ArrayDiffTest::testEquality
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+ Array (
+     0 => 1
+     1 => 2
+-    2 => 3
++    2 => 33
+     3 => 4
+     4 => 5
+     5 => 6
+ )
+
+/var/www/test.loc/task12/ArrayDiffTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/GreaterThanTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 105 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) GreaterThanTest::testFailure
+Failed asserting that 1 is greater than 2.
+
+/var/www/test.loc/task12/GreaterThanTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualsTest3.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) EqualsTest3::testFailure
+Failed asserting that two DOM documents are equal.
+--- Expected
++++ Actual
+@@ @@
+ <?xml version="1.0"?>
+-<foo>
+-  <bar/>
+-</foo>
++<bar>
++  <foo/>
++</bar>
+
+/var/www/test.loc/task12/EqualsTest3.php:15
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/InternalTypeTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 105 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) InternalTypeTest::testFailure
+Failed asserting that 42 is of type "string".
+
+/var/www/test.loc/task12/InternalTypeTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/DependencyFailureTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+FS                                                                  2 / 2 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) DependencyFailureTest::testOne
+Failed asserting that false is true.
+
+/var/www/test.loc/task12/DependencyFailureTest.php:9
+
+FAILURES!
+Tests: 2, Assertions: 1, Failures: 1, Skipped: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/TrueTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) TrueTest::testFailure
+Failed asserting that false is true.
+
+/var/www/test.loc/task12/TrueTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualsTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+FFF                                                                 3 / 3 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There were 3 failures:
+
+1) EqualsTest::testFailure
+Failed asserting that 0 matches expected 1.
+
+/var/www/test.loc/task12/EqualsTest.php:9
+
+2) EqualsTest::testFailure2
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'bar'
++'baz'
+
+/var/www/test.loc/task12/EqualsTest.php:14
+
+3) EqualsTest::testFailure3
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+ 'foo\n
+-bar\n
++bah\n
+ baz\n
+ '
+
+/var/www/test.loc/task12/EqualsTest.php:19
+
+FAILURES!
+Tests: 3, Assertions: 3, Failures: 3.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StackTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 108 ms, Memory: 8.00MB
+
+OK (3 tests, 5 assertions)
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualsTest5.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 110 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) EqualsTest5::testFailure
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+ Array (
+     0 => 'a'
+-    1 => 'b'
+-    2 => 'c'
++    1 => 'c'
++    2 => 'd'
+ )
+
+/var/www/test.loc/task12/EqualsTest5.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ContainsTest3.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+EE                                                                  2 / 2 (100%)
+
+Time: 112 ms, Memory: 8.00MB
+
+There were 2 errors:
+
+1) ContainsTest3::testFailure
+Error: Call to undefined function mb_strpos()
+
+/var/www/test.loc/task12/ContainsTest3.php:9
+
+2) ContainsTest3::testOK
+Error: Call to undefined function mb_stripos()
+
+/var/www/test.loc/task12/ContainsTest3.php:14
+
+ERRORS!
+Tests: 2, Assertions: 2, Errors: 2.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/FileEqualsTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 117 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) FileEqualsTest::testFailure
+Failed asserting that file "/home/sb/expected" exists.
+
+/var/www/test.loc/task12/FileEqualsTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/InstanceOfTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 112 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) InstanceOfTest::testFailure
+Failed asserting that Exception Object (...) is an instance of class "RuntimeException".
+
+/var/www/test.loc/task12/InstanceOfTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StringMatchesFormatTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 137 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) StringMatchesFormatTest::testFailure
+Failed asserting that string matches format description.
+--- Expected
++++ Actual
+@@ @@
+-%i
++foo
+
+/var/www/test.loc/task12/StringMatchesFormatTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ContainsTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 117 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ContainsTest::testFailure
+Failed asserting that an array contains 4.
+
+/var/www/test.loc/task12/ContainsTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ArrayWeakComparisonTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 110 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ArrayWeakComparisonTest::testEquality
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+ Array (
+-    0 => 1
++    0 => '1'
+     1 => 2
+-    2 => 3
++    2 => 33
+     3 => 4
+     4 => 5
+     5 => 6
+ )
+
+/var/www/test.loc/task12/ArrayWeakComparisonTest.php:10
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/DependencyAndDataProviderComboTest.php
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+...F                                                                4 / 4 (100%)
+
+Time: 113 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) DependencyAndDataProviderComboTest::testConsumer with data set #1 ('provider2')
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+ Array (
+-    0 => 'provider1'
++    0 => 'provider2'
+     1 => 'first'
+     2 => 'second'
+ )
+
+/var/www/test.loc/task12/DependencyAndDataProviderComboTest.php:33
+
+FAILURES!
+Tests: 4, Assertions: 4, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/CsvFileIterator.php
+
+Fatal error: Uncaught PHPUnit\Runner\Exception: Class '/var/www/test.loc/task12/CsvFileIterator' could not be found in '/var/www/test.loc/task12/CsvFileIterator.php'. in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php:99
+Stack trace:
+#0 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(130): PHPUnit\Runner\StandardTestSuiteLoader->load('/var/www/test.l...', '/var/www/test.l...')
+#1 phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php(78): PHPUnit\Runner\BaseTestRunner->loadSuiteClass('/var/www/test.l...', '/var/www/test.l...')
+#2 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(176): PHPUnit\Runner\BaseTestRunner->getTest('/var/www/test.l...', '/var/www/test.l...', Array)
+#3 phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php(155): PHPUnit\TextUI\Command->run(Array, true)
+#4 /usr/local/bin/phpunit(589): PHPUnit\TextUI\Command::main()
+#5 {main}
+  thrown in phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php on line 99
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualXMLStructureTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+FFFF                                                                4 / 4 (100%)
+
+Time: 116 ms, Memory: 8.00MB
+
+There were 4 failures:
+
+1) EqualXMLStructureTest::testFailureWithDifferentNodeNames
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'foo'
++'bar'
+
+/var/www/test.loc/task12/EqualXMLStructureTest.php:12
+
+2) EqualXMLStructureTest::testFailureWithDifferentNodeAttributes
+Number of attributes on node "foo" does not match
+Failed asserting that 0 matches expected 1.
+
+/var/www/test.loc/task12/EqualXMLStructureTest.php:24
+
+3) EqualXMLStructureTest::testFailureWithDifferentChildrenCount
+Number of child nodes of "foo" differs
+Failed asserting that 1 matches expected 3.
+
+/var/www/test.loc/task12/EqualXMLStructureTest.php:37
+
+4) EqualXMLStructureTest::testFailureWithDifferentChildren
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'bar'
++'baz'
+
+/var/www/test.loc/task12/EqualXMLStructureTest.php:50
+
+FAILURES!
+Tests: 4, Assertions: 8, Failures: 4.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/StringMatchesFormatFileTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 115 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) StringMatchesFormatFileTest::testFailure
+Failed asserting that file "/path/to/expected.txt" exists.
+
+/var/www/test.loc/task12/StringMatchesFormatFileTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/EqualsTest2.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 103 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) EqualsTest2::testFailure
+Failed asserting that 1.1 matches expected 1.0.
+
+/var/www/test.loc/task12/EqualsTest2.php:14
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+----------------------------------------------------------------------------------------
+
+/var/www/test.loc/task12/ContainsOnlyTest.php
+ 
+PHPUnit 7.2.6 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 110 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) ContainsOnlyTest::testFailure
+Failed asserting that Array &0 (
+    0 => '1'
+    1 => '2'
+    2 => 3
+) contains only values of type "string".
+
+/var/www/test.loc/task12/ContainsOnlyTest.php:9
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+----------------------------------------------------------------------------------------
+

@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class StackTest extends TestCase
+class StackTest2 extends TestCase
 {
     public function testEmpty()
     {
