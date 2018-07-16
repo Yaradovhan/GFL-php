@@ -1,8 +1,6 @@
 <?php
 
-include 'src/QueryBuilder/Query.php';
-
-class SQL extends \QueryBuilder\Query
+class SQL
 {
 
     private $dsn;

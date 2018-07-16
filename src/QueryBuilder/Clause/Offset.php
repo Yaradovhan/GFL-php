@@ -1,5 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
 
 class Offset
 {

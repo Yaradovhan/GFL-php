@@ -1,7 +1,5 @@
 <?php
 
-include "SQL.php";
-
 class Pgsql extends SQL
 {
 
@@ -12,11 +10,5 @@ class Pgsql extends SQL
         $this->setPassword(PASSWORD);
         $this->connect();
     }
-
-    /**
-     * @param $sql
-     * @return mixed
-     */
-
 
 }

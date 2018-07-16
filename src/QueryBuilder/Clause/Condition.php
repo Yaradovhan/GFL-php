@@ -1,6 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
-
 
 class Condition
 {
@@ -47,7 +45,7 @@ class Condition
         }else{
             $this->query[] = "{$column} = ?";
             $this->bind[] = $value;
-        }     
+        }
     }
 
 
@@ -60,4 +58,3 @@ class Condition
         );
     }
 }
-

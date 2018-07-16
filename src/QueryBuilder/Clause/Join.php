@@ -1,7 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
-
-use QueryBuilder\Clause\Condition;
 
 class Join
 {
@@ -16,12 +13,12 @@ class Join
 
     public function leftJoin($table, $conditions = null)
     {
-        $this->setJoin("LEFT", $table, $conditions); 
+        $this->setJoin("LEFT", $table, $conditions);
     }
 
     public function innerJoin($table, $conditions = null)
     {
-        $this->setJoin("INNER", $table, $conditions); 
+        $this->setJoin("INNER", $table, $conditions);
     }
 
     public function rightJoin($table, $conditions = null)

@@ -1,9 +1,6 @@
 <?php
-namespace QueryBuilder\Clause;
 
-use QueryBuilder\Clause\Condition;
-
-class Update 
+class Update
 {
     private $table;
     private $params;
@@ -18,13 +15,13 @@ class Update
 
     public function table($table)
     {
-        $this->table = $table; 
+        $this->table = $table;
         return $this;
     }
 
     public function set($params)
     {
-        $this->params = $params; 
+        $this->params = $params;
         return $this;
     }
 

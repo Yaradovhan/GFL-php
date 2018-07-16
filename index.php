@@ -2,10 +2,15 @@
 
 require_once 'config.php';
 include 'autoload.php';
+// require_once 'src/DataBases/SQL.php';
+// require_once 'src/DataBases/Pgsql.php';
+// require_once 'src/DataBases/Mysql.php';
+// require_once 'src/QueryBuilder/Query.php'
 
-require_once 'src/DataBases/Pgsql.php';
+// use QueryBuilder\Query;
 
-use QueryBuilder\Query;
+
+
 
 //list($query, $bind) = Query::insert("names", ["id" => "5", "name" => "Ivan"])
 //    ->build();
@@ -13,9 +18,9 @@ use QueryBuilder\Query;
 //dd($query);
 //dd($bind);
 
-list($query, $bind) = Query::select("names", ["id", "name"])
-//    ->distinct()
-    ->where(["name" => 'Yara'])
+list($query, $bind) = Query::select("Tuser6", ["id", "title"])
+   ->distinct()
+    ->where(["title" => 'Title3'])
 //    ->naturalJoin("table2")
 //    ->limit(2)
     ->build();
@@ -23,7 +28,7 @@ list($query, $bind) = Query::select("names", ["id", "name"])
 dd($query);
 dd($bind);
 
-$dbh = new Pgsql();
+$dbh = new Mysql();
 
 dd($dbh);
 

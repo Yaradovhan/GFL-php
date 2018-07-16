@@ -1,6 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
-
 
 class Insert
 {
@@ -21,7 +19,7 @@ class Insert
 
     public function set($params)
     {
-        $this->params = $params; 
+        $this->params = $params;
         return $this;
     }
 

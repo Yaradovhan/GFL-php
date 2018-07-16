@@ -1,12 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user94
- * Date: 7/16/18
- * Time: 12:11 PM
- */
 
-class Mysql
+class Mysql extends SQL
 {
+
+  public function __construct()
+  {
+      $this->setDsn(DSN_MY.':host=localhost;dbname='. DATABASE);
+      $this->setUser(USER);
+      $this->setPassword(PASSWORD);
+      $this->connect();
+  }
 
 }

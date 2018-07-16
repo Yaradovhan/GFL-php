@@ -1,10 +1,6 @@
 <?php
-namespace QueryBuilder\Clause;
 
-use QueryBuilder\Clause\Condition;
-
-
-class Delete 
+class Delete
 {
     private $table;
     private $where;
@@ -19,7 +15,7 @@ class Delete
 
     public function table($table)
     {
-        $this->table = $table; 
+        $this->table = $table;
         return $this;
     }
 
@@ -36,7 +32,7 @@ class Delete
         list($whereQuery, $whereBind) = $this->where->build();
         return array(
             $query . $whereQuery,
-            $whereBind 
+            $whereBind
         );
     }
 }

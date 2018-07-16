@@ -1,6 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
-
 
 class GroupBy
 {
@@ -9,7 +7,7 @@ class GroupBy
 
     public function __construct()
     {
-        $this->query  = array(); 
+        $this->query  = array();
     }
 
 

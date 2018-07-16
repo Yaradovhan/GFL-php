@@ -1,12 +1,4 @@
 <?php
-namespace QueryBuilder\Clause;
-
-//use QueryBuilder\Clause\Condition;
-//use QueryBuilder\Clause\Join;
-//use QueryBuilder\Clause\OrderBy;
-//use QueryBuilder\Clause\GroupBy;
-//use QueryBuilder\Clause\Limit;
-//use QueryBuilder\Clause\Offset;
 
 class Select
 {
@@ -35,13 +27,13 @@ class Select
 
     public function table($table)
     {
-        $this->table = $table; 
+        $this->table = $table;
         return $this;
     }
 
     public function columns($columns)
     {
-        $this->columns = $columns; 
+        $this->columns = $columns;
         return $this;
     }
 

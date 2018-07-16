@@ -1,14 +1,12 @@
 <?php
 
-namespace QueryBuilder\Clause;
-
 class OrderBy
 {
     private $query;
 
     public function __construct()
     {
-        $this->query  = array(); 
+        $this->query  = array();
     }
 
     public function setOrders($orders)

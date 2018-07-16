@@ -10,6 +10,6 @@ function dd($param)
 
 define('DSN_PG', 'pgsql');
 define('DSN_MY', 'mysql');
-define('DATABASE', 'dbuser');
-define('USER', 'dbuser');
-define('PASSWORD', 'dbuser');
+define('DATABASE', 'user6');
+define('USER', 'user6');
+define('PASSWORD', 'user6');
