@@ -1,18 +1,55 @@
 <?php
 
 require_once 'config.php';
-require_once 'libs/FluentPDO/FluentPDO.php';
+include 'autoload.php';
 
-$mysql = new PDO('mysql:host=localhost','dbuser', 'dbuser');
-$fmysql = new FluentPDO($mysql);
+require_once 'src/DataBases/Pgsql.php';
 
-//$query = $fmysql->from('users');
+use QueryBuilder\Query;
 
-$values = array('id' => '2', 'name' => 'John', 'password' => 'Doe', 'email' => 'fd@mail.com');
-try {
-    $query = $fmysql->insertInto('users')->values($values);
-} catch (Exception $e) {
-}
-// or shortly
-$query = $fmysql->insertInto('users', $values);
-$query->execute();
+//list($query, $bind) = Query::insert("names", ["id" => "5", "name" => "Ivan"])
+//    ->build();
+//
+//dd($query);
+//dd($bind);
+
+list($query, $bind) = Query::select("names", ["id", "name"])
+//    ->distinct()
+    ->where(["name" => 'Yara'])
+//    ->naturalJoin("table2")
+//    ->limit(2)
+    ->build();
+
+dd($query);
+dd($bind);
+
+$dbh = new Pgsql();
+
+dd($dbh);
+
+//$dbh = new PDO(DSN_PG.':host=localhost;dbname='. DATABASE, USER, PASSWORD);
+$stmt = $dbh->prepare($query);
+$stmt->execute($bind);
+dd($stmt->fetchAll(PDO::FETCH_ASSOC));
+
+//list($delQuery, $delBind) = Query::delete("names")
+//    ->where(["id" => "4"])
+//    ->build();
+//
+//dd($delQuery);
+//dd($delBind);
+
+//$dbh = new PDO('mysql:host=localhost;dbname=dbuser', 'dbuser', 'dbuser');
+//$stmt = $dbh->prepare($delQuery);
+//$stmt->execute($delBind);
+
+//list($query, $bind) = Query::update("table", ["column1" => "value1"])
+//    ->where(["column1" => "value1"])
+//    ->build();
+//
+//dd($query);
+//dd($bind);
+
+//$dbh = new PDO('mysql:host=localhost;dbname=dbuser', 'dbuser', 'dbuser');
+//$stmt = $dbh->prepare($query);
+//$stmt->execute($bind);
