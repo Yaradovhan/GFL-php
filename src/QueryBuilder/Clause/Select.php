@@ -17,12 +17,12 @@ class Select
     {
         $this->table($table);
         $this->columns($columns);
-        $this->joins  = array();
+        $this->joins  = [];
         $this->where  = new Condition("WHERE");
         $this->order  = new OrderBy();
         $this->group  = new GroupBy();
-        $this->limit  = new Limit();
-        $this->offset = new Offset();
+        // $this->limit  = new Limit();
+        // $this->offset = new Offset();
     }
 
     public function table($table)
@@ -101,11 +101,16 @@ class Select
         return $this;
     }
 
-    public function limit($limit, $offset = 0)
+    public function limit()
     {
-        $this->limit->setLimit($limit);
-        $this->offset->setOffset($offset);
-        return $this;
+      $this->limit = ' LIMIT :limit';
+      return $this;
+    }
+
+    public function offset()
+    {
+      $this->offset = ' OFFSET :offset ';
+      return $this;
     }
 
     public function build()
@@ -115,22 +120,18 @@ class Select
 
         $bind = array();
         foreach($this->joins as $join){
-            list($joinQuery, $joinBind) = $join->build();
+            list($joinQuery) = $join->build();
             $query .= $joinQuery;
-            $bind = array_merge($bind, $joinBind);
         }
 
-        list($whereQuery, $whereBind) = $this->where->build();
+        list($whereQuery) = $this->where->build();
 
         $group = $this->group->build();
         $order = $this->order->build();
 
-        list($limit,  $limitBind)  = $this->limit->build();
-        list($offset, $offsetBind) = $this->offset->build();
+        $limit  = $this->limit;
+        $offset = $this->offset;
 
-        return array(
-            $query . $whereQuery . $group . $order . $limit . $offset ,
-            array_merge($bind, $whereBind, $limitBind, $offsetBind)
-        );
+        return $query . $whereQuery . $group . $order . $limit . $offset;
     }
 }

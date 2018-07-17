@@ -9,7 +9,7 @@ class Limit
         $this->limit = null;
     }
 
-    public function setLimit($limit)
+    public function setLimit()
     {
         $this->limit = $limit;
     }
@@ -17,9 +17,6 @@ class Limit
     public function build()
     {
         if(is_null($this->limit)) return array("", array());
-        return array(
-            " LIMIT ?",
-            array($this->limit)
-        );
+        return " LIMIT :limit";
     }
 }

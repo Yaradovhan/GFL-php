@@ -2,40 +2,47 @@
 
 require_once 'config.php';
 include 'autoload.php';
-// require_once 'src/DataBases/SQL.php';
-// require_once 'src/DataBases/Pgsql.php';
-// require_once 'src/DataBases/Mysql.php';
-// require_once 'src/QueryBuilder/Query.php'
 
-// use QueryBuilder\Query;
+$mysql = new Mysql();
+$pgsql = new Pgsql();
 
-
-
-
-//list($query, $bind) = Query::insert("names", ["id" => "5", "name" => "Ivan"])
-//    ->build();
+dd($mysql);
+dd($pgsql);
+list($queryIns, $bindIns) = Query::insert("Tuser6", ["id" => "5", "title" => "Ivan"])
+   ->build();
 //
-//dd($query);
-//dd($bind);
+// dd($queryIns);
+// dd($bindIns);
 
-list($query, $bind) = Query::select("Tuser6", ["id", "title"])
-   ->distinct()
-    ->where(["title" => 'Title3'])
-//    ->naturalJoin("table2")
-//    ->limit(2)
+$querySel = Query::select("Tuser6", ["id", "title"])
+   // ->distinct()
+    ->where(['title'])
+    // ->leftJoin("table3", array("table2.column3 = table3.column3"))
+   //  ->rightJoin("table3", array("table2.column3 = table3.column3"))
+   // ->naturalJoin("table2")
+   // ->crossJoin("table2")
+   // ->groupBy(array("column4"))
+   // ->orderBy(['id'])
+   // ->limit()
+   // ->offset()
     ->build();
 
-dd($query);
-dd($bind);
-
-$dbh = new Mysql();
-
-dd($dbh);
+dd($querySel);
+// dd($bindSel);
+$a=2;
+$n=1;
+$title='title2';
+$stmt = $mysql->prepare($querySel);
+// $stmt->bindParam(':limit', $a, PDO::PARAM_INT);
+// $stmt->bindParam(':id', $n, PDO::PARAM_STR);
+$stmt->bindParam(':title', $title, PDO::PARAM_STR);
+$stmt->execute();
+dd($stmt->fetchAll(PDO::FETCH_ASSOC));
 
 //$dbh = new PDO(DSN_PG.':host=localhost;dbname='. DATABASE, USER, PASSWORD);
-$stmt = $dbh->prepare($query);
-$stmt->execute($bind);
-dd($stmt->fetchAll(PDO::FETCH_ASSOC));
+// $stmt = $dbh->prepare($query);
+// $stmt->execute($bind);
+// dd($stmt->fetchAll(PDO::FETCH_ASSOC));
 
 //list($delQuery, $delBind) = Query::delete("names")
 //    ->where(["id" => "4"])
