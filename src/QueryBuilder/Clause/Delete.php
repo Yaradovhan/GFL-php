@@ -29,10 +29,7 @@ class Delete
     public function build()
     {
         $query = "DELETE FROM {$this->table}";
-        list($whereQuery, $whereBind) = $this->where->build();
-        return array(
-            $query . $whereQuery,
-            $whereBind
-        );
+        list($whereQuery) = $this->where->build();
+        return $query . $whereQuery;
     }
 }

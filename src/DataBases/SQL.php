@@ -17,30 +17,69 @@ class SQL
     {
         return $this->dsn;
     }
+
     public function setDsn($dsn)
     {
         $this->dsn = $dsn;
     }
+
     public function getUser()
     {
         return $this->user;
     }
+
     public function setUser($user)
     {
         $this->user = $user;
     }
+
     public function getPassword()
     {
         return $this->password;
     }
+
     public function setPassword($password)
     {
         $this->password = $password;
     }
 
-    public function prepare($sql)
+    public function prepareExecute($sql, $binds=null)
     {
-        return $this->dbh->prepare($sql);
+        $stmt = $this->dbh->prepare($sql);
+        if(isset ($binds)) {
+            foreach ($binds as $id => &$bind) {
+
+                if (!empty($bind)) {
+                    if (is_int($bind)) {
+                        $stmt->bindParam(":$id", $bind, PDO::PARAM_INT);
+                    } else {
+                        $stmt->bindParam(":$id", $bind, PDO::PARAM_STR);
+                    }
+                }
+            }
+        }
+        $stmt->execute();
+        return $stmt;
     }
+
+//    public function prepareExecute($sql, $binds)
+//    {
+//        $stmt = $this->dbh->prepare($sql);
+//        foreach ($binds as $key => &$bind) {
+//            if (isset($bind) && $bind != null) {
+//                if (is_string($bind)) {
+//                    echo "tytstr";
+//                    $stmt->bindParam(":$key", $bind, PDO::PARAM_STR);
+//                } elseif (is_int($bind)) {
+//                    echo "tyt";
+//                    $stmt->bindParam(":$key", $bind, PDO::PARAM_INT);
+//                } else {
+//                    return false;
+//                }
+//                $stmt->execute();
+//            }
+//            return $stmt;
+//        }
+//    }
 
 }

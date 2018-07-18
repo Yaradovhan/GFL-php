@@ -9,7 +9,7 @@ class Update
     public function __construct($table, $params)
     {
         $this->table($table);
-        $this->set($params);
+        $this->params($params);
         $this->where = new Condition("WHERE");
     }
 
@@ -19,7 +19,7 @@ class Update
         return $this;
     }
 
-    public function set($params)
+    public function params($params)
     {
         $this->params = $params;
         return $this;
@@ -33,21 +33,17 @@ class Update
 
     public function build()
     {
-        $columns = array_keys($this->params);
-        $bind = array_values($this->params);
+        $columns = array_values($this->params);
 
-        $sets = array();
+        $sets = [];
         foreach($columns as $column){
-            $sets[] = "{$column} = ?";
+            $sets[] = "{$column} = :{$column}";
         }
         $sets = join(", ", $sets);
 
         $query = "UPDATE {$this->table} SET {$sets}";
 
-        list($whereQuery, $whereBind) = $this->where->build();
-        return array(
-            $query . $whereQuery,
-            array_merge($bind, $whereBind)
-        );
+        list($whereQuery) = $this->where->build();
+        return $query . $whereQuery ;
     }
 }

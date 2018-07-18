@@ -6,62 +6,88 @@ include 'autoload.php';
 $mysql = new Mysql();
 $pgsql = new Pgsql();
 
-dd($mysql);
-dd($pgsql);
-list($queryIns, $bindIns) = Query::insert("Tuser6", ["id" => "5", "title" => "Ivan"])
-   ->build();
+/////////////////////////INSERT/////////////////////////
 //
-// dd($queryIns);
-// dd($bindIns);
-
-$querySel = Query::select("Tuser6", ["id", "title"])
-   // ->distinct()
-    ->where(['title'])
-    // ->leftJoin("table3", array("table2.column3 = table3.column3"))
-   //  ->rightJoin("table3", array("table2.column3 = table3.column3"))
-   // ->naturalJoin("table2")
-   // ->crossJoin("table2")
-   // ->groupBy(array("column4"))
-   // ->orderBy(['id'])
-   // ->limit()
-   // ->offset()
+$queryIns = Query::insert("names", ["id", "name"])
     ->build();
 
-dd($querySel);
-// dd($bindSel);
-$a=2;
-$n=1;
-$title='title2';
-$stmt = $mysql->prepare($querySel);
-// $stmt->bindParam(':limit', $a, PDO::PARAM_INT);
-// $stmt->bindParam(':id', $n, PDO::PARAM_STR);
-$stmt->bindParam(':title', $title, PDO::PARAM_STR);
-$stmt->execute();
-dd($stmt->fetchAll(PDO::FETCH_ASSOC));
+//dd($queryIns);
 
-//$dbh = new PDO(DSN_PG.':host=localhost;dbname='. DATABASE, USER, PASSWORD);
-// $stmt = $dbh->prepare($query);
-// $stmt->execute($bind);
-// dd($stmt->fetchAll(PDO::FETCH_ASSOC));
+$dataIns = [
+    'id' =>100,
+    'name' => 'user100'
+];
 
-//list($delQuery, $delBind) = Query::delete("names")
-//    ->where(["id" => "4"])
-//    ->build();
+//$pgsql->prepareExecute($queryIns,$dataIns);
+
 //
-//dd($delQuery);
-//dd($delBind);
+////////////////////////////////////////////////////////
 
-//$dbh = new PDO('mysql:host=localhost;dbname=dbuser', 'dbuser', 'dbuser');
-//$stmt = $dbh->prepare($delQuery);
-//$stmt->execute($delBind);
 
-//list($query, $bind) = Query::update("table", ["column1" => "value1"])
-//    ->where(["column1" => "value1"])
-//    ->build();
+/////////////////////////SELECT/////////////////////////
+///
+$querySel = Query::select('names', ['id','name'])
+    ->distinct()
+    ->where(['id'])
+//    ->leftJoin("cars", array("names.id = cars.id"))
+//    ->rightJoin("cars", array("names.id = cars.id"))
+//    ->naturalJoin("cars")
+//    ->crossJoin("cars")
+//    ->groupBy(array("column4"))
+//    ->orderBy(['name'])
+//    ->limit()
+//    ->offset()
+    ->build();
+
+//dd($querySel);
+
+$dataSel = [
+    'id'=>1
+];
+/*
+если в запросе не присутствует условие в метод prepareExecute второй параметр можем не передавать или передавать пустой массив
+второй параметр обязательно должен быть массивом.
+*/
+//$stmt = $pgsql->prepareExecute($querySel,$dataSel);
+
+//dd($stmt->fetchAll(PDO::FETCH_ASSOC));
+
 //
-//dd($query);
-//dd($bind);
+////////////////////////////////////////////////////////
 
-//$dbh = new PDO('mysql:host=localhost;dbname=dbuser', 'dbuser', 'dbuser');
-//$stmt = $dbh->prepare($query);
-//$stmt->execute($bind);
+
+/////////////////////////DELETE/////////////////////////
+///
+$queryDel = Query::delete('names')
+    ->where(['id'])
+    ->build();
+
+$dataDel = [
+    'id' => 100
+];
+
+//dd($queryDel);
+
+//$pgsql->prepareExecute($queryDel, $dataDel);
+//
+/////////////////////////////////////////////////////////
+
+
+/////////////////////////UPDATE/////////////////////////
+/// ключи в изменяемых ячейках не должны повторяться в параметре WHERE
+$queryUp = Query::update('names',['name'])
+    ->where(['id'])
+    ->build();
+
+//dd($queryUp);
+
+$dataUp=[
+    'name'=>'user111',
+    'id'=> 100
+];
+
+//$pgsql->prepareExecute($queryUp, $dataUp);
+
+////////////////////////////////////////////////////////
+
+include 'src/view/index.php';

@@ -18,7 +18,7 @@ class Select
         $this->table($table);
         $this->columns($columns);
         $this->joins  = [];
-        $this->where  = new Condition("WHERE");
+        $this->where  = new Condition('WHERE');
         $this->order  = new OrderBy();
         $this->group  = new GroupBy();
         // $this->limit  = new Limit();
@@ -51,6 +51,8 @@ class Select
 
     public function leftJoin($table, $conditions = null)
     {
+//        dd($table);
+//        dd($conditions);
         $join = new Join();
         $join->leftJoin($table, $conditions);
         $this->joins[] = $join;
@@ -118,7 +120,6 @@ class Select
         $columns = join(", ", $this->columns);
         $query = "SELECT {$this->distinct}{$columns} FROM {$this->table}";
 
-        $bind = array();
         foreach($this->joins as $join){
             list($joinQuery) = $join->build();
             $query .= $joinQuery;

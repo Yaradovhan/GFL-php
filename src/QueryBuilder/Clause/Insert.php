@@ -4,34 +4,44 @@ class Insert
 {
     private $table;
     private $params;
+    private $value;
 
     public function __construct($table, $params)
     {
         $this->table($table);
-        $this->set($params);
+        $this->params($params);
     }
 
     public function table($table)
     {
-        $this->table  = $table;
+        $this->table = $table;
         return $this;
     }
 
-    public function set($params)
+    public function params($params)
     {
         $this->params = $params;
         return $this;
     }
 
+    public function addExpression($column)
+    {
+        $this->value[] .= ":{$column}";
+
+    }
+
     public function build()
     {
-        $columns = array_keys($this->params);
-        $bind    = array_values($this->params);
 
-        $placeHolders = join(", ", array_fill(0, count($columns), "?"));
+        $columns = array_values($this->params);
+        foreach ($columns as $column) {
+            $this->addExpression($column);
+        }
+        $value = array_values($this->value);
         $columns = join(", ", $columns);
-        $query = "INSERT INTO {$this->table} ({$columns}) VALUES ({$placeHolders})";
+        $value = join(", ", $value);
+        $query = "INSERT INTO {$this->table} ({$columns}) VALUES ({$value})";
 
-        return array($query, $bind);
+        return $query;
     }
 }

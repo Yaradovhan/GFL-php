@@ -36,20 +36,19 @@ class Join
         $this->setJoin("NATURAL", $table);
     }
 
-    private function setJoin($type, $table, $conditions=null)
+    private function setJoin($type, $table, $conditions = null)
     {
-        $this->type  = $type;
+        $this->type = $type;
         $this->table = $table;
-        $this->on->setConditions($conditions);
+        if ($conditions != null) {
+            $this->on->setOnConditions($conditions);
+        }
     }
 
     public function build()
     {
         $query = " {$this->type} JOIN {$this->table}";
-        list($on, $bind) = $this->on->build();
-        return array(
-            $query . $on,
-            $bind
-        );
+        list($on) = $this->on->build();
+        return [$query . $on];
     }
 }
