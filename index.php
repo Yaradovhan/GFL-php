@@ -3,10 +3,35 @@
 require_once 'config.php';
 include 'autoload.php';
 
-$names = new names();
-$cars = new cars();
+try {
+  $tuser = new Tuser6();
 
-$cars->getAll();
+  $tuser->getAll();
+
+// dd($tuser->deleteById(2));
+  // $tuser->id=5;
+  // $tuser->title="Title5";
+  // $tuser->save();
+  // $tuser->getAll();
+
+  // $tuser->deleteAll();
+
+}catch(Exception $e)
+  {
+    echo $e->getMessage();
+  }
+
+
+
+
+// $tuser->save();
+
+// $tuser->getAll();
+
+// $names = new names();
+// $cars = new cars();
+//
+// $cars->getAll();
 //$cars->getFieldsFromTable();
 //$cars->id = 666;
 //$cars->title = 'demon';
