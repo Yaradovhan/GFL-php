@@ -5,9 +5,6 @@ class Condition
     private $phrase;
     private $query;
 
-    // private $bind;
-
-
     public function __construct($phrase)
     {
         $this->phrase = $phrase;

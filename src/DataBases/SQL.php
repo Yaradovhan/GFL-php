@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 class SQL
 {
@@ -43,17 +43,21 @@ class SQL
         $this->password = $password;
     }
 
-    public function prepareExecute($sql, $binds=null)
+    /**
+     * @param $sql
+     * @param null $binds
+     * @return mixed
+     * @throws Exception
+     */
+    public function prepareExecute($sql, $binds = null)
     {
         $stmt = $this->dbh->prepare($sql);
-        if(isset ($binds)) {
+        if (isset ($binds)) {
             foreach ($binds as $id => &$bind) {
-                if (!empty($bind)) {
-                    if (is_int($bind)) {
-                        $stmt->bindParam(":$id", $bind, PDO::PARAM_INT);
-                    } else {
-                        $stmt->bindParam(":$id", $bind, PDO::PARAM_STR);
-                    }
+                if (is_int($bind)) {
+                    $stmt->bindParam(":$id", $bind, PDO::PARAM_INT);
+                } else {
+                    $stmt->bindParam(":$id", $bind, PDO::PARAM_STR);
                 }
             }
         }

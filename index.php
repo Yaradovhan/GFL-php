@@ -4,55 +4,37 @@ require_once 'config.php';
 include 'autoload.php';
 
 try {
-  $tuser = new Tuser6();
+    $names = new names();//название класса является названием таблицы sql
 
-  $tuser->getAll();
+//данный Active Record умеет работать с таблица где есть различное количество полей
+//методы, которые являются столбцами таблицы names не обьявляем. они работают при помощи метода __set
+//при обращении к столбцу, который не существует в таблице - выбросится исключение
+//данный Active Record умеет работать с базами данных MySQL и PostgreSQL
+//так же с таблицами у которых множество полей
 
-// dd($tuser->deleteById(2));
-  // $tuser->id=5;
-  // $tuser->title="Title5";
-  // $tuser->save();
-  // $tuser->getAll();
+//    $names->title=0;
+//    $names->id = 4;
+//    $names->name = 'VALUE4';
+//    $names->save();
+//    dd($names->findById(0));
+//    $names->deleteById(4);
+//    $names->deleteAll();
+    dd($names->getAll());
 
-  // $tuser->deleteAll();
-
-}catch(Exception $e)
-  {
-    echo $e->getMessage();
-  }
-
-
-
-
-// $tuser->save();
-
-// $tuser->getAll();
-
-// $names = new names();
-// $cars = new cars();
-//
-// $cars->getAll();
-//$cars->getFieldsFromTable();
-//$cars->id = 666;
-//$cars->title = 'demon';
-//dd($cars->getFieldsFromTable());
-//$cars->save();
-//dd($cars->getFieldsFromTable());
-//$names->getAll();
-//$names->getAll();
-//$names->findById(4);
-//$names->id = 4;
-//$names->name = "yara";
-
-//$names->seve();
-
-//dd($names->tableName());
-//dd($tabl = $names->getFieldsFromTable());
-//dd($tabl);
+    $test = new task11;
+    $test->id=3;
+    $test->title='Title2';
+    $test->name='Name2';
+    $test->email='Email2';
+    $test->save();
+    dd($test->getAll());
 
 
-
-
+} catch (Exception $e) {
+    echo $e->getMessage()."<br>";
+    echo $e->getFile()."<br>";
+    echo $e->getLine()."<br>";
+}
 
 
 /////////////////////////INSERT/////////////////////////
